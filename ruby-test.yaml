@@ -1,0 +1,18 @@
+version: "3"
+services:
+  ruby:
+    volumes:
+     - .:/app
+    image: ruby:3.4-slim
+    ports:
+     - 3000:3000
+    tty: true
+    stdin_open: true
+  postgres:
+    image: postgres:16
+    ports: 
+     - 5432:5433
+    environment:
+     - POSTGRES_USER=admin
+     - POSTGRES_PASSWORD=secret_password
+     - POSTGRES_DB=myapp_development
