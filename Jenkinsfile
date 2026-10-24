@@ -4,7 +4,8 @@ pipeline {
     stages {
         stage('Hello') {
             steps {
-                echo 'Hello World'
+                echo 'List Files'
+                sh 'ls -artl'
             }
         }
     }
